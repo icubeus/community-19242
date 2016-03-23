@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+	        <children>
+                <sociallink translate="title" module="sociallink">
+                    <sort_order>10</sort_order>
+                    <title>Manage Social Link Products</title>
+                    <action>adminhtml/sociallink_products/</action>
+                </sociallink>
+	        </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <sociallink translate="title" module="sociallink">
+                                <title>Social Link - Manage Products</title>
+                            </sociallink>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

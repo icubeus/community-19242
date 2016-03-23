@@ -4,8 +4,8 @@ $installer = $this;
 $installer->startSetup();
 
 $installer->run("
-    DROP TABLE IF EXISTS {$this->getTable('icube_sociallink/sociallink')};  
-    CREATE TABLE {$this->getTable('icube_sociallink/sociallink')}
+    DROP TABLE IF EXISTS {$this->getTable('sociallink/sociallink')};  
+    CREATE TABLE {$this->getTable('sociallink/sociallink')}
     ( 	
     	`id` int(11) unsigned NOT NULL auto_increment, 
     	`sku` varchar(255) DEFAULT NULL COMMENT 'Sku',

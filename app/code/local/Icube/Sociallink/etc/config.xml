@@ -6,24 +6,29 @@
         </Icube_Sociallink>
     </modules>
     <global>
+	    <blocks>
+            <sociallink>
+                <class>Icube_Sociallink_Block</class>
+            </sociallink>
+        </blocks>
 	    <helpers>
-            <icube_sociallink>
+            <sociallink>
                 <class>Icube_Sociallink_Helper</class>
-            </icube_sociallink>
+            </sociallink>
         </helpers>
         <models>
-	        <icube_sociallink>
+	        <sociallink>
                 <class>Icube_Sociallink_Model</class>
-                <resourceModel>icube_sociallink_resource</resourceModel>
-            </icube_sociallink>
-            <icube_sociallink_resource>
+                <resourceModel>sociallink_resource</resourceModel>
+            </sociallink>
+            <sociallink_resource>
                 <class>Icube_Sociallink_Model_Resource</class>
                 <entities>
                     <sociallink>
                         <table>icube_sociallink</table>
                     </sociallink>
                 </entities>
-            </icube_sociallink_resource>
+            </sociallink_resource>
         </models>
         <resources>
             <icube_sociallink_setup>
@@ -33,12 +38,23 @@
             </icube_sociallink_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Icube_Sociallink before="Mage_Adminhtml">Icube_Sociallink_Adminhtml</Icube_Sociallink>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
     <adminhtml>
 	    <events>
             <adminhtml_catalog_product_grid_prepare_massaction>
                 <observers>
                     <add_massaction_product_grid>
-                        <class>icube_sociallink/observer</class>
+                        <class>sociallink/observer</class>
                         <type>singleton</type>
                         <method>addMassAction</method>
                     </add_massaction_product_grid>

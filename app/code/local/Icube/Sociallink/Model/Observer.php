@@ -11,9 +11,9 @@ class Icube_Sociallink_Model_Observer
             return $this;
         }
         
-      	$block->getMassactionBlock()->addItem('ready_for_pickup', array(
-        'label'=> Mage::helper('icube_sociallink')->__('Set Status to Ready for Pickup'),
-        'url'  => Mage::getUrl('sociallink/index/setReadyForPickup')
+      	$block->getMassactionBlock()->addItem('assign_to_sociallink', array(
+        'label'=> Mage::helper('sociallink')->__('Assign to SocialLink'),
+        'url'  => Mage::getUrl('*/sociallink_products/assignToSocialLink')
         ));
     }
 
