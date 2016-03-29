@@ -16,8 +16,8 @@ $installer->run("
     	`sell_price` decimal(12,4) NOT NULL DEFAULT '0.0000' COMMENT 'Sell Price',
     	`qty` decimal(12,4) DEFAULT '0.0000' COMMENT 'Qty',
     	`channel` varchar(255) DEFAULT NULL COMMENT 'Channel',
-    	`start_sell` datetime DEFAULT NULL COMMENT 'Start Sell',
-		`end_sell` datetime DEFAULT NULL COMMENT 'End Sell',
+    	`start_sell` date DEFAULT NULL COMMENT 'Start Sell',
+		`end_sell` date DEFAULT NULL COMMENT 'End Sell',
     	PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     ");

@@ -77,14 +77,14 @@ class Icube_Sociallink_Block_Adminhtml_Sociallink_Grid extends Mage_Adminhtml_Bl
         $this->addColumn('start_sell', array(
             'header' => Mage::helper('sociallink')->__('Start Sell'),
             'index' => 'start_sell',
-            'type' => 'datetime',
+            'type' => 'date',
             'width' => '100px',
         ));
         
         $this->addColumn('end_sell', array(
             'header' => Mage::helper('sociallink')->__('End Sell'),
             'index' => 'end_sell',
-            'type' => 'datetime',
+            'type' => 'date',
             'width' => '100px',
         ));
         
@@ -95,7 +95,7 @@ class Icube_Sociallink_Block_Adminhtml_Sociallink_Grid extends Mage_Adminhtml_Bl
     protected function _prepareMassaction()
     {
         $this->setMassactionIdField('id');
-        $this->getMassactionBlock()->setFormFieldName('sociallink_product');
+        $this->getMassactionBlock()->setFormFieldName('sociallink_id');
 
         $this->getMassactionBlock()->addItem('delete', array(
              'label'=> Mage::helper('sociallink')->__('Delete'),
@@ -127,7 +127,7 @@ class Icube_Sociallink_Block_Adminhtml_Sociallink_Grid extends Mage_Adminhtml_Bl
 	            'label'    	=> Mage::helper('sociallink')->__('Start Sell'),
 	            'gmtoffset' => true,
 	            'image'    	=> '/skin/adminhtml/default/default/images/grid-cal.gif',
-	            'format'    => '%d/%m/%Y'
+	            'format'    => '%d-%m-%Y'
 		        ),
 	        	'end_date'  => array(
 	            'name'     	=> 'end_date',
@@ -136,7 +136,7 @@ class Icube_Sociallink_Block_Adminhtml_Sociallink_Grid extends Mage_Adminhtml_Bl
 	            'label'    	=> Mage::helper('sociallink')->__('End Sell'),
 	            'gmtoffset' => true,
 	            'image'    	=> '/skin/adminhtml/default/default/images/grid-cal.gif',
-	            'format'    => '%d/%m/%Y'
+	            'format'    => '%d-%m-%Y'
 		        )
 		    )
 		));
